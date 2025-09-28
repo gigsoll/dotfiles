@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Hyprland
+import qs.datasources
 
 Row {
     Repeater {
@@ -7,9 +8,10 @@ Row {
         Component {
             id: group
             Rectangle {
-                id: rect
                 required property var modelData;
                 property bool active: modelData.active
+                
+                id: rect
                 height: 30
                 width: 40
                 color: active ? "pink":"lightgray"
@@ -18,7 +20,8 @@ Row {
                     anchors.centerIn: rect
                     color: "black" 
                     font {
-                        pointSize: 15
+                        pointSize: Config.fontSize
+                        family: Config.fontName
                     }
                 }
             }

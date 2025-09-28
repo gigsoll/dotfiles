@@ -3,6 +3,8 @@ import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
 
+import qs.widgets
+
 
 Scope {
     id: root
@@ -18,12 +20,14 @@ Scope {
                 right: true
             }
             implicitHeight: 30
-
-            ClockWidget {
-                anchors.centerIn: parent
+            
+            Row {
+                WorkspacesWidget {}
+                ClockWidget {}
+                KeyboardWidget {}
             }
 
-            WorkspacesWidget {}
+
         }
     }
 
