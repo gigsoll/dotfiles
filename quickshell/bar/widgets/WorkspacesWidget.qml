@@ -2,9 +2,10 @@ import QtQuick
 import Quickshell.Hyprland
 import Quickshell.Widgets
 import QtQuick.Controls
+import QtQuick.Layouts
 import qs.datasources
 
-Row {
+RowLayout {
     height: parent.height
     Repeater {
         model: Hyprland.workspaces
@@ -14,6 +15,11 @@ Row {
             width: 40
             height: parent.height
             color: isActive ? "pink":"lightgray"
+            anchors {
+                leftMargin: 5
+                rightMargin: 5
+            }
+
             Text {
                 text: modelData.id
                 anchors.centerIn: parent

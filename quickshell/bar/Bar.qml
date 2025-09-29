@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
+import QtQuick.Layouts
 
 import qs.widgets
 
@@ -21,15 +22,28 @@ Scope {
             }
             implicitHeight: 30
             
-            Row {
-                height: parent.height
+            RowLayout {
+                id: left
+                anchors{
+                    left: parent.left
+                    verticalCenter: parent.verticalCenter
+                }
+                implicitHeight: parent.height
                 WorkspacesWidget {}
-                ClockWidget {}
-                KeyboardWidget {}
             }
-
-
+            RowLayout {
+                id: center
+                anchors.centerIn: parent
+                ClockWidget {}
+            }
+            RowLayout {
+                id: right
+                anchors{
+                    right: parent.right
+                    verticalCenter: parent.verticalCenter
+                }
+                    KeyboardWidget {}
+            }
         }
     }
-
 }
