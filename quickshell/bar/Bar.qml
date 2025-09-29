@@ -22,6 +22,7 @@ Scope {
             implicitHeight: 30
             
             Row {
+                height: parent.height
                 WorkspacesWidget {}
                 ClockWidget {}
                 KeyboardWidget {}
