@@ -16,7 +16,10 @@ Singleton {
     }
 
     readonly property var nameFlagMapping: JSON.parse(jsonFile.text())
-    property string layoutText: "Hello"
+    property string layoutText: ""
+    property string layoutName: ""
+
+    property string windowName: "Стільниця"
 
     Process {
         id: getLayout
@@ -27,6 +30,7 @@ Singleton {
             onStreamFinished: {
                 const devices = JSON.parse(this.text)
                 let curLayoutName = devices["keyboards"].find(kb => kb.main === true)["active_keymap"]
+                root.layoutName = curLayoutName
                 curLayoutName = nameFlagMapping[curLayoutName]
                 root.layoutText = curLayoutName
             }
@@ -37,8 +41,13 @@ Singleton {
         target: Hyprland
 
         function onRawEvent(event) {
-            if (event.name !== "activelayout") return
-            getLayout.running = true
+            if (event.name === "activelayout") {
+                getLayout.running = true
+            }
+
+            if (event.name === "activewindow") {
+                root.windowName = event.data.split(",")[1]
+            }
         }
     }
 }
