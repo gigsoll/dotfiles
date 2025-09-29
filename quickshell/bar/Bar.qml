@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.widgets
+import qs.datasources
 
 
 Scope {
@@ -22,15 +23,12 @@ Scope {
             }
             implicitHeight: 30
             
-            RowLayout {
-                id: left
-                anchors{
-                    left: parent.left
-                    verticalCenter: parent.verticalCenter
-                }
-                implicitHeight: parent.height
-                WorkspacesWidget {}
+            Grouping {
+                anchors.left: parent.left
+                WorkspacesWidget{}
+                WindowNameWidget {}
             }
+
             RowLayout {
                 id: center
                 anchors.centerIn: parent

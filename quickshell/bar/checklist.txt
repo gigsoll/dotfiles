@@ -1,0 +1,15 @@
+✅ ❌
+[[ icons ]]
+✅ workspaces
+❌ window title
+✅ clock
+❌ notifications
+❌ brightness
+❌ loudness
+❌ wifi
+❌ bluetooth
+✅ keyboard
+❌ sleep indicatior
+❌ tray
+❌ logout
+
