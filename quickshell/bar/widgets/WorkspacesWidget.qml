@@ -4,6 +4,7 @@ import Quickshell.Widgets
 import QtQuick.Controls
 import QtQuick.Layouts
 import qs.datasources
+import qs.widgets
 
 RowLayout {
     height: parent.height
@@ -20,13 +21,9 @@ RowLayout {
                 rightMargin: 5
             }
 
-            Text {
+            Label {
                 text: modelData.id
                 anchors.centerIn: parent
-                font {
-                    pointSize: Config.fontSize
-                    family: Config.fontName
-                }
             }
             MouseArea {
                 anchors. fill: parent
