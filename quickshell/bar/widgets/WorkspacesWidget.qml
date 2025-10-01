@@ -14,7 +14,7 @@ RowLayout {
             required property var modelData
             property bool isActive: modelData.active
             width: 40
-            height: parent.height
+            implicitHeight: parent.height
             color: isActive ? "pink":"lightgray"
             anchors {
                 leftMargin: 5

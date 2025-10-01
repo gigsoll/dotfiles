@@ -1,13 +1,11 @@
 import QtQuick.Layouts
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
 
-
-RowLayout {
-    anchors.verticalCenter: parent.verticalCenter
+Rectangle {
+    id: rect
     implicitHeight: parent.height
-    Rectangle {
-        color: "khaki"
-        anchors.fill: parent
-    }
+    implicitWidth: childrenRect.width
+    color: "red"
 }

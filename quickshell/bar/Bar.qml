@@ -25,22 +25,30 @@ Scope {
             
             Grouping {
                 anchors.left: parent.left
-                WorkspacesWidget{}
-                WindowNameWidget {}
+                anchors.verticalCenter: parent.verticalCenter
+                RowLayout {
+                    implicitHeight: parent.height
+                    WorkspacesWidget{}
+                    WindowNameWidget {}
+                }
             }
 
-            RowLayout {
-                id: center
+            
+            Grouping {
+                anchors.left: parent.left
                 anchors.centerIn: parent
-                ClockWidget {}
-            }
-            RowLayout {
-                id: right
-                anchors{
-                    right: parent.right
-                    verticalCenter: parent.verticalCenter
+                RowLayout {
+                    ClockWidget {}
                 }
+            }
+        
+
+             Grouping {
+                 anchors.right: parent.right
+                 RowLayout {
                     KeyboardWidget {}
+                    Systray {}
+                 }
             }
         }
     }
