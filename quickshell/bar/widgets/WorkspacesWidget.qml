@@ -15,7 +15,7 @@ RowLayout {
             property bool isActive: modelData.active
             width: 40
             implicitHeight: parent.height
-            color: isActive ? "pink":"lightgray"
+            color: isActive ? Config.accent:Config.inactive
             anchors {
                 leftMargin: 5
                 rightMargin: 5

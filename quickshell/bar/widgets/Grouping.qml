@@ -2,10 +2,11 @@ import QtQuick.Layouts
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import qs.datasources
 
 Rectangle {
-    id: rect
     implicitHeight: parent.height
+    anchors.verticalCenter: parent.verticalCenter
     implicitWidth: childrenRect.width
-    color: "red"
+    color: Config.background
 }

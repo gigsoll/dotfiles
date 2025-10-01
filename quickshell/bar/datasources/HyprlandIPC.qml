@@ -19,7 +19,7 @@ Singleton {
     property string layoutText: ""
     property string layoutName: ""
 
-    property string windowName: "Стільниця"
+    property string windowName: ""
 
     Process {
         id: getLayout

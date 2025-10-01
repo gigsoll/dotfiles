@@ -25,7 +25,6 @@ Scope {
             
             Grouping {
                 anchors.left: parent.left
-                anchors.verticalCenter: parent.verticalCenter
                 RowLayout {
                     implicitHeight: parent.height
                     WorkspacesWidget{}
@@ -35,9 +34,9 @@ Scope {
 
             
             Grouping {
-                anchors.left: parent.left
                 anchors.centerIn: parent
                 RowLayout {
+                    implicitHeight: parent.height
                     ClockWidget {}
                 }
             }
@@ -46,6 +45,7 @@ Scope {
              Grouping {
                  anchors.right: parent.right
                  RowLayout {
+                    implicitHeight: parent.height
                     KeyboardWidget {}
                     Systray {}
                  }
