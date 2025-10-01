@@ -8,7 +8,9 @@ Singleton {
     readonly property int fontSize: 12
 
     readonly property string background: "#282828"
+    readonly property string sectionColor: "#3C3836"
+    readonly property string groupColor: "#504945"
+    readonly property string buttonColor: "#665C54"
     readonly property string accent: "#689D6A"
-    readonly property string inactive: "#3C3836"
     readonly property string fontColor: "#EBDBB2"
 }
