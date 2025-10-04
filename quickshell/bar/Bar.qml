@@ -30,7 +30,6 @@ Scope {
             }
 
             Group {
-                Text {text: ""}
                 WorkspacesWidget {}
                 WindowNameWidget {}
             }

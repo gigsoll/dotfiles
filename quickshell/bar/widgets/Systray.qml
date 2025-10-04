@@ -9,10 +9,9 @@ import qs.widgets.basic
 Group {
     Repeater {
         model: SystemTray.items
-        IconImage {
+        StyledButton {
             required property var modelData
-            source: modelData.icon
-            implicitSize: Config.fontSize + 8
+            imageSource: modelData.icon
         }
     }
 }
