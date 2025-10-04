@@ -10,7 +10,6 @@ Text {
     text: ""
     width: implicitWidth
     height: implicitHeight
-    anchors.verticalCenter: parent.verticalCenter
     color: Config.fontColor
     Layout.alignment: Qt.AlignVCenter
     font {

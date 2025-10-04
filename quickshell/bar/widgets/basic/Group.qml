@@ -9,11 +9,10 @@ Rectangle {
     width: childrenRect.width
     height: parent.height
     default property alias content: layout.children
-    color: "red"
+    color: Config.sectionColor
     RowLayout {
         id: layout
         implicitHeight: parent.height
         anchors.verticalCenter: parent.verticalCenter
     }
-    Component.onCompleted: {console.log(height)}
 }

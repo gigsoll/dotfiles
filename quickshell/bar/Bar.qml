@@ -24,6 +24,11 @@ Scope {
             }
             implicitHeight: 30
 
+            Rectangle {
+                anchors.fill: parent
+                color: Config.background
+            }
+
             Group {
                 Text {text: ""}
                 WorkspacesWidget {}

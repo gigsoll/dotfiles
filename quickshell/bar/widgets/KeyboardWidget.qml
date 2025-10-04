@@ -1,10 +1,7 @@
 import QtQuick
 import qs.datasources
+import qs.widgets.basic
 
-Text {
+StyledButton {
     text: HyprlandIPC.layoutText
-    font {
-        pointSize: Config.fontSize
-        family: Config.fontName
-    }
 }

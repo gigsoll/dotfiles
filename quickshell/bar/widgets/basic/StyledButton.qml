@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import Quickshell
+import Quickshell.Widgets
 import qs.datasources
 
 Rectangle {
@@ -15,12 +16,21 @@ Rectangle {
     property var handleRightClick: () => {}
     property var handleScroll: (wheel) => {}
 
-    StyledText {
-        text: styledButton.text
-    }
+    property bool disableText: false
+    property bool disableImage: true
 
-    Component.onCompleted: {
-        console.log(text, childrenRect.height)
+    RowLayout {
+        implicitHeight: parent.height
+        anchors.verticalCenter: parent.verticalCenter
+        IconImage {
+            visible: !disableImage
+            source: "file:///home/tolik/Завантажене/teto.png"
+            implicitSize: Config.fontSize + 8
+        }
+        StyledText {
+            visible: !disableText
+            text: styledButton.text
+        }
     }
 
     MouseArea {
