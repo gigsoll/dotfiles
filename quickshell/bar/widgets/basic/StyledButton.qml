@@ -12,23 +12,26 @@ Rectangle {
     color: Config.buttonColor
 
     property string text
+    property string imageSource
+
     property var handleLeftClick: () => {}
     property var handleRightClick: () => {}
     property var handleScroll: (wheel) => {}
 
-    property bool disableText: false
-    property bool disableImage: true
+    property bool enableText: Boolean(text)
+    property bool enableImage: Boolean(imageSource)
 
     RowLayout {
         implicitHeight: parent.height
         anchors.verticalCenter: parent.verticalCenter
+        spacing: 1
         IconImage {
-            visible: !disableImage
-            source: "file:///home/tolik/Завантажене/teto.png"
+            visible: enableImage
+            source: imageSource
             implicitSize: Config.fontSize + 8
         }
         StyledText {
-            visible: !disableText
+            visible: enableText
             text: styledButton.text
         }
     }
