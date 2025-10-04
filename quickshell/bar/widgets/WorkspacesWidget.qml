@@ -9,8 +9,24 @@ Group {
         StyledButton {
             required property var modelData
             property bool isActive: modelData.active
-            text: modelData.name
+            readonly property int workspaceID: modelData.id
+            readonly property string workspaceName: modelData.name
+            text: workspaceName
             color: isActive ? Config.accent : Config.buttonColor
+            handleLeftClick: () => {
+                Hyprland.dispatch(`workspace ${workspaceID}`)
+            }
+            handleRightClick: () => {
+                Hyprland.dispatch(`movetoworkspacesilent ${workspaceID}`)
+            }
+            handleScroll: (wheel) => {
+                let isScrollUp = wheel.angleDelta.y > 0
+                if (isScrollUp) {
+                    Hyprland.dispatch(`workspace +1`)
+                } else {
+                    Hyprland.dispatch(`workspace -1`)
+                }
+            }
         }
     }
 }
