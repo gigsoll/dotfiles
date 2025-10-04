@@ -1,6 +1,7 @@
 import QtQuick
 import qs.datasources
+import qs.widgets.basic
 
-Label{
+StyledButton {
     text: Time.time
 }

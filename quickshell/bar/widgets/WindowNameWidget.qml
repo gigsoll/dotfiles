@@ -1,14 +1,12 @@
 import QtQuick
 import Quickshell
 import qs.datasources
+import qs.widgets.basic
 
 
-Label {
-    id: root
+StyledButton {
     text: setName()
-    width: implicitWidth
     property bool isHovered: false
-    clip: true
 
     function setName() {
         const windowName = HyprlandIPC.windowName
@@ -17,12 +15,5 @@ Label {
         if (root.isHovered)     return windowName
         return windowName.slice(0, maxLetterCount)
     }
-
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        hoverEnabled: true
-        onEntered: { root.isHovered = true}
-        onExited: {root.isHovered = false}
-    }
 }
+

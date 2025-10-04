@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.widgets
+import qs.widgets.basic
 import qs.datasources
 
 
@@ -22,33 +23,22 @@ Scope {
                 right: true
             }
             implicitHeight: 30
-            
-            Grouping {
-                anchors.left: parent.left
-                RowLayout {
-                    implicitHeight: parent.height
-                    WorkspacesWidget{}
-                    WindowNameWidget {}
-                }
+
+            Group {
+                Text {text: ""}
+                WorkspacesWidget {}
+                WindowNameWidget {}
             }
 
-            
-            Grouping {
+            Group {
                 anchors.centerIn: parent
-                RowLayout {
-                    implicitHeight: parent.height
-                    ClockWidget {}
-                }
+                ClockWidget {}
             }
-        
 
-             Grouping {
+             Group {
                  anchors.right: parent.right
-                 RowLayout {
-                    implicitHeight: parent.height
-                    KeyboardWidget {}
-                    Systray {}
-                 }
+                 KeyboardWidget {}
+                 Systray {}
             }
         }
     }

@@ -17,7 +17,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        console.log(childrenRect.height)
+        console.log(text, childrenRect.height)
     }
 
     MouseArea {
