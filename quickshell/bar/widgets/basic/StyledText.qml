@@ -8,7 +8,6 @@ import QtQuick.Layouts
 Text {
     id: root
     text: ""
-    width: implicitWidth
     height: implicitHeight
     color: Config.fontColor
     Layout.alignment: Qt.AlignVCenter
@@ -19,11 +18,5 @@ Text {
 
     padding: 10
 
-    Behavior on width {
-        NumberAnimation {
-            duration:500
-            easing.type: Easing.OutQuad
-        }
-    }
 }
 

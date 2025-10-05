@@ -7,8 +7,9 @@ import qs.datasources
 
 Rectangle {
     id: styledButton 
-    implicitHeight: parent.height
-    implicitWidth: childrenRect.width
+    height: parent ? parent.height : implicitHeight
+    implicitWidth: elements.width
+    width: implicitWidth
     color: Config.buttonColor
 
     property string text
@@ -22,7 +23,7 @@ Rectangle {
     property bool enableImage: Boolean(imageSource)
 
     RowLayout {
-        implicitHeight: parent.height
+        id: elements
         anchors.verticalCenter: parent.verticalCenter
         spacing: 1
         IconImage {
@@ -35,7 +36,6 @@ Rectangle {
             text: styledButton.text
         }
     }
-
     MouseArea {
         anchors.fill: parent
         acceptedButtons: Qt.LeftButton | Qt.RightButton
@@ -48,6 +48,12 @@ Rectangle {
         }
         onWheel: {
             handleScroll(wheel)
+        }
+    }
+
+    Behavior on width {
+        NumberAnimation {
+            duration: 300
         }
     }
 }
