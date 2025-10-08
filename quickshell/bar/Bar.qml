@@ -41,6 +41,7 @@ Scope {
 
              Group {
                  anchors.right: parent.right
+                 Battery {}
                  KeyboardWidget {}
                  Systray {}
             }
