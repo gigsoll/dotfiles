@@ -12,6 +12,9 @@ Group {
         StyledButton {
             required property var modelData
             imageSource: modelData.icon
+        Component.onCompleted: {
+            console.log(modelData.icon)
+        }
         }
     }
 }

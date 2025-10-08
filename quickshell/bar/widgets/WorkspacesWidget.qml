@@ -12,7 +12,7 @@ Group {
             readonly property int workspaceID: modelData.id
             readonly property string workspaceName: modelData.name
             text: workspaceName
-            color: isActive ? Config.accent : Config.buttonColor
+            customColor: isActive ? Config.accent : Config.buttonColor
             handleLeftClick: () => {
                 Hyprland.dispatch(`workspace ${workspaceID}`)
             }
