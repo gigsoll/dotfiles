@@ -5,15 +5,15 @@ import qs.widgets.basic
 
 
 StyledButton {
+    id: root
     text: setName()
-    property bool isHovered: false
 
     function setName() {
         const windowName = HyprlandIPC.windowName
         const maxLetterCount = 30
         if (windowName == "")   return "Стільниця"
-        if (root.isHovered)     return windowName
-        return windowName.slice(0, maxLetterCount)
+        if (root.isHovered || windowName.length <= maxLetterCount)  return windowName
+        return windowName.slice(0, maxLetterCount - 3).replace(/\s+$/, '') + "..."
     }
 }
 

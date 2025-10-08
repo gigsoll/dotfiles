@@ -14,6 +14,7 @@ Rectangle {
 
     property string text
     property string imageSource
+    property string iconName
 
     property var handleLeftClick: () => {}
     property var handleRightClick: () => {}
@@ -21,6 +22,9 @@ Rectangle {
 
     property bool enableText: Boolean(text)
     property bool enableImage: Boolean(imageSource)
+    property bool isIconName: Boolean(imageSource || iconName)
+    
+    property bool isHovered: false
 
     RowLayout {
         id: elements
@@ -48,6 +52,13 @@ Rectangle {
         }
         onWheel: {
             handleScroll(wheel)
+        }
+        HoverHandler {
+            id: mouse
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+            onHoveredChanged: {
+                styledButton.isHovered = mouse.hovered
+            }
         }
     }
 
