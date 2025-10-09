@@ -13,9 +13,10 @@ Group {
             required property var modelData
             property string deviceType: UPowerDeviceType.toString(modelData.type)
             property real percentage: modelData.percentage
-            imageSource: `image://icon/${modelData.iconName}`
 
-            text: percentage * 100 + "%"
+            imageSource: `image://icon/${modelData.iconName}`
+            text: Math.round(percentage * 100) + "%"
+
             Component.onCompleted: {
                 if (deviceType === "Battery") {
                     visible = true

@@ -6,7 +6,7 @@ import Quickshell.Widgets
 import qs.datasources
 
 Button {
-    id: styledButton 
+    id: styledButton
     height: parent ? parent.height : implicitHeight
     width: implicitWidth
     flat: true
@@ -17,7 +17,9 @@ Button {
     }
     palette.buttonText: Config.fontColor
 
-    padding: 10
+    leftPadding: 10
+    rightPadding: 10
+
 
     property string imageSource: ""
     property string iconName: ""
@@ -30,7 +32,6 @@ Button {
     property bool isHovered: false
 
     icon.source: imageSource
-    icon.name: iconName
 
     background: Rectangle {
         color: customColor
