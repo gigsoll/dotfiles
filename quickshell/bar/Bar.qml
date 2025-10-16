@@ -15,6 +15,7 @@ Scope {
     Variants {
         model: Quickshell.screens;
         PanelWindow {
+            id: barRoot
             required property var modelData
             screen: modelData
             anchors {
@@ -30,16 +31,19 @@ Scope {
             }
 
             Group {
+                id: leftGroup
                 WorkspacesWidget {}
                 WindowNameWidget {}
             }
 
             Group {
+                id: centerGroup 
                 anchors.centerIn: parent
                 ClockWidget {}
             }
 
-             Group {
+            Group {
+                 id: rightGroup
                  anchors.right: parent.right
                  Battery {}
                  KeyboardWidget {}

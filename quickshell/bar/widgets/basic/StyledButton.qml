@@ -61,7 +61,8 @@ Button {
 
     Behavior on width {
         NumberAnimation {
-            duration: 300
+            duration: 150
+            easing: {type: Easing.InOutQuad; overshoot: 500}
         }
     }
 }

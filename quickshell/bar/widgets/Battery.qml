@@ -23,7 +23,6 @@ Group {
                     console.log(`Icon source from component: ${icon.source}`)
                 }
             }
-
         }
     }
 }

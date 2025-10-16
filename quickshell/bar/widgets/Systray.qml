@@ -7,14 +7,24 @@ import qs.datasources
 import qs.widgets.basic
 
 Group {
+    id: systray
     Repeater {
         model: SystemTray.items
         StyledButton {
+            id: trayIcon
             required property var modelData
             imageSource: modelData.icon
-        Component.onCompleted: {
-            console.log(modelData.icon)
-        }
+
+            handleLeftClick: () => {
+                modelData.activate()
+            }
+
+            handleRightClick: () => {
+                modelData.display(
+                    barRoot,
+                    rightGroup.x + systray.x + trayIcon.x + trayIcon.width, 
+                    barRoot.height)
+            }
         }
     }
 }
